@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './pages/Shared/Header'
 import Footer from './pages/Shared/Footer'
-
+import MovieGrid from './pages/Home/MovieGrid'
 function App() {
   const [movies, setMovies] = useState([])
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      
+      <MovieGrid />
       <Footer />
     </div>
   )
