@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     // this can be added in a consume folder
     const fetchMovie = async () => {
-      const result = await axios(`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.react_app_apikey}`)
+      const result = await axios(`https://api.themoviedb.org/3/movie/550?api_key=${process.env.react_app_apikey}`)
       console.log(result.data)
     }
     fetchMovie()
