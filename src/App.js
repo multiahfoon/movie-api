@@ -2,8 +2,8 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 
 import './App.css'
-import Header from './components/ui/Header'
-import Footer from './components/ui/Footer'
+import Header from './pages/Shared/Header'
+import Footer from './pages/Shared/Footer'
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      
       <Footer />
     </div>
   )
