@@ -6,6 +6,7 @@ import Header from './components/ui/Header'
 function App() {
   // TODO: needs refactoring, code smells
   useEffect(() => {
+    // this can be added in a consume folder
     const fetchMovie = async () => {
       const result = await axios (`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.react_app_apikey}`)
       console.log(result.data)
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      
     </div>
   );
 }

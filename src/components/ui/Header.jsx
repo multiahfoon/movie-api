@@ -5,6 +5,10 @@ const Header = () => {
     <>
       <header>
         <h1>Hello World</h1>
+        <nav>
+          <input type="text"/>
+          <button>Search</button>
+        </nav>
       </header>
     </>
   )
