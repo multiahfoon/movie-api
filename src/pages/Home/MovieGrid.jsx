@@ -1,11 +1,15 @@
 import React from 'react'
 import MovieCard from './MovieCard'
 
-const MovieGrid = () => {
+const MovieGrid = ({data}) => {
   return (
     <>
     <main className="movieGrid">
-      <MovieCard />
+      {
+        data.map(movie => {
+          return <MovieCard key={movie.id} data={movie}/>
+        })
+      }
     </main>
     </>
   )

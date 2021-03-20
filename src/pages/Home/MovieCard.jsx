@@ -1,10 +1,10 @@
 import React from 'react'
 
-const MovieCard = () => {
+const MovieCard = ({data}) => {
   return (
     <>
       <div className="movieCard">
-        <img src="" alt=""/>
+        <p>{data.title}</p>
       </div>
     </>
   )
