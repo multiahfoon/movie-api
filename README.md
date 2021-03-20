@@ -9,4 +9,4 @@ Still in early stages but currently using:
 - axios
 
 #### API
-- themoviedb api
+- themoviedb
