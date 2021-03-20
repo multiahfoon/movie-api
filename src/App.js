@@ -1,21 +1,24 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './App.css'
 import Header from './components/ui/Header'
 import Footer from './components/ui/Footer'
 
 function App() {
-  // TODO: needs refactoring, code smells
+  const [movies, setMovies] = useState([])
+
+  // TODO: move axios into an api directory
+  // to maintain the state, you will need redux
   useEffect(() => {
-    // this can be added in a consume folder
-    const fetchMovie = async () => {
-      const result = await axios(`https://api.themoviedb.org/3/movie/550?api_key=${process.env.react_app_apikey}`)
-      console.log(result.data)
-    }
-    fetchMovie()
+    axios(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.react_app_apikey}`)
+      .then(popularMovies => {
+        setMovies(popularMovies.data.results)
+      })
+      .catch(err => console.error(err))
   }, [])
 
+  console.log(movies)
 
   return (
     <div className="container">
