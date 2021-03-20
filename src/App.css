@@ -3,6 +3,12 @@ html, body {
   padding: 0;
 }
 
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   width: 85%;
   margin: auto;
@@ -12,5 +18,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+footer > nav > ul {
+  display: flex;
+  width: 10vw;
+  justify-content: space-between;
 }
 
