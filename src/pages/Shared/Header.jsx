@@ -10,6 +10,7 @@ const Header = () => {
   
   const handleClick = () => {
     setSearch(userInput)
+    console.log(search)
   }
 
   return (
