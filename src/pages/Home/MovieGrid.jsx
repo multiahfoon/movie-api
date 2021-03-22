@@ -1,38 +1,34 @@
-import axios from 'axios'
-import React, {useEffect } from 'react'
+import React, { useEffect } from 'react'
 import MovieCard from './MovieCard'
 
-// redux
+
+// used to connect to redux store
 import { connect } from 'react-redux'
-import {setMovies} from '../../actions'
-import { dispatch } from '../../store'
+// a function that dispatches api response to be reduced
+import { getMovies } from './MovieGridHelper'
 
-const MovieGrid = ({movies}) => {
-  
+// react component
+const MovieGrid = ({ movies }) => {
   useEffect(() => {
-    axios(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.react_app_apikey}`)
-      .then(popularMovies => {
-        dispatch(setMovies(popularMovies.data.results))
-      })
-      .catch(err => console.error(err))
+    getMovies()
   }, [])
-
+  
+  
   return (
     <>
-    <main className="movieGrid">
-      {
-        movies 
-        ? movies.map(movie => {
-          return <MovieCard key={movie.id} data={movie}/>
-        })
-        : "Loading..."
-      }
-    </main>
+      <main className="movieGrid">
+        {
+          movies.map(movie => {
+            return <MovieCard key={movie.id} data={movie} />
+          })
+        }
+      </main>
     </>
   )
 }
 
-const mapStateToProp = (state) => {
+// add store to components props
+function mapStateToProp (state) {
   return {
     movies: state.movies
   }

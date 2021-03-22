@@ -1,9 +1,11 @@
 export const MOVIES = 'MOVIES'
 
-export function setMovies (movies) {
+const setMovies = (movies) => {
   return  {
     type: MOVIES,
     movies
   }
 } 
+
+export default setMovies
 

@@ -1,12 +1,8 @@
-import { MOVIES } from '../actions'
+import { combineReducers } from 'redux'
 
-const movies = (state = [], actions) => {
-  switch (actions.type) {
-    case MOVIES:
-      return actions.movies
-    default: 
-      return state
-  }
-}
+import movies from './movies'
 
-export default movies
+export default combineReducers ({
+  movies
+})
+
