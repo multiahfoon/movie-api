@@ -4,15 +4,15 @@ import MovieCard from './MovieCard'
 
 // used to connect to redux store
 import { connect } from 'react-redux'
-// a function that dispatches api response to be reduced
-import { getPopularMovies } from './MovieGridHelper'
+// get movies from api and add them to store
+import { getPopularMovies } from '../../api/theMovieDb'
 
 // react component
 const MovieGrid = ({popularMovies}) => {
+
   useEffect(() => {
     getPopularMovies()
   }, [])
-  
   
   return (
     <>
