@@ -1,11 +1,11 @@
-export const MOVIES = 'MOVIES'
+export const POPULAR_MOVIES = 'POPULAR_MOVIES'
 
-const setMovies = (movies) => {
+export const popularMovies = (popularMovies) => {
   return  {
-    type: MOVIES,
-    movies
+    type: POPULAR_MOVIES,
+    popularMovies
   }
 } 
 
-export default setMovies
+
 

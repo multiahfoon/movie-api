@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 import { dispatch } from '../../store'
-import  setMovies  from '../../actions'
+import { popularMovies } from '../../actions'
 
-export function getMovies () {
+export function getPopularMovies () {
   axios(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.react_app_apikey}`)
-    .then(popularMovies => {
-      dispatch(setMovies(popularMovies.data.results))
+    .then(movies => {
+      dispatch(popularMovies(movies.data.results))
       return null
     })
     .catch(err => console.error(err))

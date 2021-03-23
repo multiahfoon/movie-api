@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 
-import movies from './movies'
+import popularMovies from './popularMovies'
 
 export default combineReducers ({
-  movies
+  popularMovies
 })
 

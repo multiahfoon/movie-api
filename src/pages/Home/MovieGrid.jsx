@@ -5,12 +5,12 @@ import MovieCard from './MovieCard'
 // used to connect to redux store
 import { connect } from 'react-redux'
 // a function that dispatches api response to be reduced
-import { getMovies } from './MovieGridHelper'
+import { getPopularMovies } from './MovieGridHelper'
 
 // react component
-const MovieGrid = ({ movies }) => {
+const MovieGrid = ({popularMovies}) => {
   useEffect(() => {
-    getMovies()
+    getPopularMovies()
   }, [])
   
   
@@ -18,7 +18,7 @@ const MovieGrid = ({ movies }) => {
     <>
       <main className="movieGrid">
         {
-          movies.map(movie => {
+          popularMovies.map(movie => {
             return <MovieCard key={movie.id} data={movie} />
           })
         }
@@ -30,7 +30,7 @@ const MovieGrid = ({ movies }) => {
 // add store to components props
 function mapStateToProp (state) {
   return {
-    movies: state.movies
+    popularMovies: state.popularMovies
   }
 }
 
