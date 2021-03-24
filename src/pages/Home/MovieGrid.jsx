@@ -8,17 +8,26 @@ import { connect } from 'react-redux'
 import { getPopularMovies } from '../../api/theMovieDb'
 
 // react component
-const MovieGrid = ({popularMovies}) => {
+const MovieGrid = (props) => {
+  const {
+    popularMovies,
+    searchMovie
+  } = props
 
+  
+  
   useEffect(() => {
     getPopularMovies()
   }, [])
-  
+
+  let movies = []
+  searchMovie.length < 1 ? movies = [...movies, ...popularMovies] : movies = [...movies, ...searchMovie]
+
   return (
     <>
       <main className="movieGrid">
         {
-          popularMovies.map(movie => {
+          movies.map(movie => {
             return <MovieCard key={movie.id} data={movie} />
           })
         }

@@ -2,6 +2,7 @@ import React from 'react'
 
 const baseImgUrl = 'https://image.tmdb.org/t/p/w500/'
 
+// TODO: add backup for when there is no poster image
 const MovieCard = ({data}) => {
   return (
     <>
