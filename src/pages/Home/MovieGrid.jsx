@@ -30,7 +30,8 @@ const MovieGrid = ({popularMovies}) => {
 // add store to components props
 function mapStateToProp (state) {
   return {
-    popularMovies: state.popularMovies
+    popularMovies: state.popularMovies,
+    searchMovie: state.searchMovie 
   }
 }
 

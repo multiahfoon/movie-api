@@ -1,4 +1,5 @@
 export const POPULAR_MOVIES = 'POPULAR_MOVIES'
+export const SEARCH_MOVIE = 'SEARCH_MOVIE'
 
 export const popularMovies = (popularMovies) => {
   return  {
@@ -7,5 +8,11 @@ export const popularMovies = (popularMovies) => {
   }
 } 
 
+export const searchMovie = (searchMovie) => {
+  return {
+    type: SEARCH_MOVIE,
+    searchMovie
+  }
+}
 
 

@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 
+// function makes get request to api with search
+import { getSearchMovie } from '../../api/theMovieDb'
 const Header = () => {
-  const [userInput, setUserInput] = useState('')
-  const [search, setSearch] = useState([])
-  
+  const [search, setSearch] = useState('')
+
   const handleChange = (e) => {
-    setUserInput(e.target.value)
+    setSearch(e.target.value)
   }
   
   const handleClick = () => {
-    setSearch(userInput)
-    console.log(search)
+    getSearchMovie(search)
   }
 
   return (
