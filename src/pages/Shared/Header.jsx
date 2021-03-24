@@ -9,7 +9,8 @@ const Header = () => {
     setSearch(e.target.value)
   }
   
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     getSearchMovie(search)
   }
 
@@ -18,9 +19,12 @@ const Header = () => {
       <header>
         <h1>Hello World</h1>
         <nav>
+        <form onSubmit={handleSubmit}>
           <input type="text" onChange={handleChange}/>
-          <button onClick={handleClick}>Search</button>
+          <button>Search</button>
+        </form>
         </nav>
+
       </header>
     </>
   )
