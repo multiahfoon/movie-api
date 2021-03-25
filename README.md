@@ -5,6 +5,7 @@ Current still under construction.
 
 ## Tech Stack
 Still in early stages but currently using:
+- JavaScript
 - Nodejs
 - React
 - axios
