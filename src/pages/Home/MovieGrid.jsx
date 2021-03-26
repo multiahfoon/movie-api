@@ -20,6 +20,7 @@ const MovieGrid = (props) => {
     getPopularMovies()
   }, [])
 
+  // TODO: needs refactoring, don't leave as global 
   let movies = []
   searchMovie.length < 1 ? movies = [...movies, ...popularMovies] : movies = [...movies, ...searchMovie]
 
