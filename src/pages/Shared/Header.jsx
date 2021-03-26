@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 // function makes get request to api with search
 import { getSearchMovie, getPopularMovies } from '../../api/theMovieDb'
-const Header = () => {
+
+const Header = (props) => {
+  const history = useHistory()
   const [search, setSearch] = useState('')
+
   const handleChange = (e) => {
     setSearch(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    
     // if search is an empty string do not make api call
-    return search !== ""? getSearchMovie(search) : null
+    await search !== "" ? getSearchMovie(search) : null
+      .then(() => history.push('/'))
   }
 
   const resetMovies = () => {

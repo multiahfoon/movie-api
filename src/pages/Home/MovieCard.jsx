@@ -8,7 +8,7 @@ const MovieCard = ({ data }) => {
   return (
     <>
       <div className="movieCard">
-        <Link to={'/movie'}>
+        <Link to={`/movie/${data.id}`}>
           <img className="poster" src={baseImgUrl + data.poster_path} alt="" />
         </Link>
       </div>

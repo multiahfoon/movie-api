@@ -2,16 +2,19 @@ import React, { useEffect } from 'react'
 
 // used to connect to redux store
 import { connect } from 'react-redux'
+import { useParams } from 'react-router'
 
 // fires request to api to get movie and dispatches action
 import { getMovieDetails } from '../../api/theMovieDb'
 
-const MovieDetails = ({movie}) => {
-  const Id = '399566'
-  
+const MovieDetails = (props) => {
+  // const Id = '399566'
+  const { id }  = useParams()
+  const { movie } = props
+
   useEffect(() => {
-    getMovieDetails(Id)
-  }, [])
+    getMovieDetails(id)
+  }, [id])
 
   // TODO: this works for now but needs refactoring  
   return movie.length < 1 ?
@@ -20,7 +23,7 @@ const MovieDetails = ({movie}) => {
     <>
       <h1>Movie Details</h1>
       
-      <h2>{movie.belongs_to_collection.name}</h2>
+      <h2>{movie.title}</h2>
     </>
   )
 }

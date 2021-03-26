@@ -15,7 +15,7 @@ function App() {
     <div className="container">
       <Header />
       <Route exact path='/' component={MovieGrid}/>
-      <Route exact path='/movie' component={MovieDetails}/>
+      <Route exact path='/movie/:id' component={MovieDetails}/>
       <Footer />
     </div>
   )
