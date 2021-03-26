@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { dispatch } from '../store'
-import { popularMovies, searchMovie } from '../actions'
+import { popularMovies, searchMovie, movieDetails } from '../actions'
 
 const apiKey = process.env.react_app_apikey
 
@@ -24,3 +24,12 @@ export function getSearchMovie (movie) {
     .catch(err => console.error(err))
 }
 
+
+export function getMovieDetails (id) {
+  axios(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
+    .then(details => {
+      dispatch(movieDetails(details.data))
+      dispatch(searchMovie([]))
+    })
+    .catch(err => console.error(err))
+}

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
-import MovieCard from './MovieCard'
-
 
 // used to connect to redux store
 import { connect } from 'react-redux'
-// get movies from api and add them to store
+
+// fires request to api to get movie and dispatches action
 import { getPopularMovies } from '../../api/theMovieDb'
 
-// react component
+// child component
+import MovieCard from './MovieCard'
+
 const MovieGrid = (props) => {
   const {
     popularMovies,
