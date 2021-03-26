@@ -23,7 +23,9 @@ const MovieGrid = (props) => {
 
   // TODO: needs refactoring, don't leave as global 
   let movies = []
-  searchMovie.length < 1 ? movies = [...movies, ...popularMovies] : movies = [...movies, ...searchMovie]
+  searchMovie.length < 1 
+    ? movies = [...movies, ...popularMovies] 
+    : movies = [...movies, ...searchMovie]
 
   return (
     <>
@@ -42,7 +44,7 @@ const MovieGrid = (props) => {
 function mapStateToProp (state) {
   return {
     popularMovies: state.popularMovies,
-    searchMovie: state.searchMovie 
+    searchMovie: state.searchMovie
   }
 }
 
