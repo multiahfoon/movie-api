@@ -15,16 +15,15 @@ const MovieGrid = (props) => {
     searchMovie
   } = props
 
-  
-  
   useEffect(() => {
     getPopularMovies()
   }, [])
 
-  // TODO: needs refactoring, don't leave as global 
+  // TODO: needs refactoring
+  // if theres nothing in search movie show popular movies else show searched movie results
   let movies = []
-  searchMovie.length < 1 
-    ? movies = [...movies, ...popularMovies] 
+  searchMovie.length < 1
+    ? movies = [...movies, ...popularMovies]
     : movies = [...movies, ...searchMovie]
 
   return (
@@ -41,7 +40,7 @@ const MovieGrid = (props) => {
 }
 
 // add store to components props
-function mapStateToProp (state) {
+function mapStateToProp(state) {
   return {
     popularMovies: state.popularMovies,
     searchMovie: state.searchMovie
