@@ -20,6 +20,7 @@ export function getSearchMovie (movie) {
   axios(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movie}&language=en-US&page=1&include_adult=false`)
     .then(movieFound => {
       dispatch(popularMovies(clear))
+      dispatch(movieDetails(clear))
       dispatch(searchMovie(movieFound.data.results))
     })
     .catch(err => console.error(err))
