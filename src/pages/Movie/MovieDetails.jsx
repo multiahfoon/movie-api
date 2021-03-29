@@ -29,6 +29,14 @@ const MovieDetails = (props) => {
       <>
         <h1>Movie Details</h1>
         <h2>{movie.title}</h2>
+        <p>{movie.overview}</p>
+        {
+          movie.genres.map(genre => {
+            return(<p>{genre.name}</p>)
+          })
+        }
+        <p>Rating: {movie.vote_average}</p>
+        <p>Runtime: {movie.runtime }min</p>
       </>
     )
 }
