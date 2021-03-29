@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+
+import { dispatch } from '../../store'
+import { searchMovie, movieDetails, popularMovies } from '../../actions' 
 
 // function makes get request to api with search
 import { getSearchMovie, getPopularMovies } from '../../api/theMovieDb'
@@ -8,13 +11,20 @@ const Header = (props) => {
   const [search, setSearch] = useState('')
   const handleChange = (e) => setSearch(e.target.value)
   
+  const history = useHistory()
+
+  const clear = []
   const handleSubmit = (e) => {
     e.preventDefault()
-    // if search is an empty do not make api call
-    return search !== "" ? getSearchMovie(search) : null
+    return search !== "" ? (
+      history.push('/'),
+      getSearchMovie(search)
+    ) : null
   }
 
 const resetMovies = () => {
+  dispatch(searchMovie(clear))
+  dispatch(movieDetails(clear))
   getPopularMovies()
 }
 
