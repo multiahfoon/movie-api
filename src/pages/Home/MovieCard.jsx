@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const baseImgUrl = 'https://image.tmdb.org/t/p/w500/'
+const baseImgUrl = 'https://image.tmdb.org/t/p/w300/'
 
 // TODO: add backup for when there is no poster image
 const MovieCard = ({ data }) => {
