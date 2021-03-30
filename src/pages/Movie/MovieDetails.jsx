@@ -22,7 +22,8 @@ const MovieDetails = (props) => {
   }, [id])
 
 
-  // TODO: this works for now but needs refactoring  
+  // TODO: this works for now but needs refactoring
+  // stops markup from rendering until movies has completely loaded 
   return movie.length < 1 ?
     null
     : (
