@@ -43,6 +43,7 @@ footer > nav > ul {
   overflow: hidden;
 }
 
+/* TODO: Remove this once images are all sorted */
 .movieCard {
   border: solid black 2px;
 }
