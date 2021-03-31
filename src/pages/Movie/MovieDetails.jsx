@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 // used to connect to redux store
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
-
+import {useHistory} from 'react-router-dom'
 import { dispatch } from '../../store'
 import { searchMovie, popularMovies } from '../../actions'
 
@@ -26,6 +26,10 @@ const MovieDetails = (props) => {
     dispatch(popularMovies([]))
   }, [id])
 
+  const history = useHistory()
+  const handleClick = () => {
+    history.push('/')
+  }
 
   // TODO: this works for now but needs refactoring
   // stops markup from rendering until movies has completely loaded 
@@ -63,6 +67,7 @@ const MovieDetails = (props) => {
               <p>{movie.tagline}</p>
               <p>Runtime: {movie.runtime}min</p>
               <p>Rating: {movie.vote_average}</p>
+              <button onClick={handleClick}>Back</button>
             </div>
           </article>
         
