@@ -38,8 +38,8 @@ const MovieDetails = (props) => {
           <div className="detailsPoster">
             {
               movie.poster_path !== null
-                ? <img className="poster" src={basePosterUrl + movie.poster_path} alt="" />
-                : <img className="poster" src={'/noPoster.png'} alt="no poster" />
+                ? <img src={basePosterUrl + movie.poster_path} alt="" />
+                : <img src={'/noPoster.png'} alt="no poster" />
             }
           </div>
 
