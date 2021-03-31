@@ -57,12 +57,19 @@ footer > nav > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 2%;
-  
+  height: 80vh;
+  padding-bottom: 1rem;
 }
 
 .movieDetails > .detailsPoster {
   grid-column: 1 / 2;  
   width: 80%;
+  display: grid;
+  align-content: center;
+}
+
+.movieDetails > .detailsPoster > img {
+  width: 100%;
 }
 
 .movieBio {
