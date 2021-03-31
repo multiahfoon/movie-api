@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 // components
 import './App.css'
 import Header from './pages/Shared/Header'
-import Footer from './pages/Shared/Footer'
 import MovieGrid from './pages/Home/MovieGrid'
 import MovieDetails from './pages/Movie/MovieDetails'
 
@@ -16,7 +15,6 @@ function App() {
       <Header />
       <Route exact path='/' component={MovieGrid}/>
       <Route exact path='/movie/:id' component={MovieDetails}/>
-      <Footer />
     </div>
   )
 }
