@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
+import {useHistory} from 'react-router-dom'
+
 
 // used to connect to redux store
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
-import {useHistory} from 'react-router-dom'
 import { dispatch } from '../../store'
-import { searchMovie, popularMovies } from '../../actions'
+import { searchMovie, popularMovies, movieDetails } from '../../actions'
 
 
 // fires request to api to get movie and dispatches action
@@ -27,7 +28,10 @@ const MovieDetails = (props) => {
   }, [id])
 
   const history = useHistory()
+  const clear = []
   const handleClick = () => {
+    dispatch(searchMovie(clear))
+    dispatch(movieDetails(clear))
     history.push('/')
   }
 
