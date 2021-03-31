@@ -30,22 +30,27 @@ const MovieDetails = (props) => {
     null
     : (
       <>
-        <section class='movieDetails'>
-          <h1>Movie Details</h1>
-          <h2>{movie.title}</h2>
-          {
-            movie.poster_path !== null
+        <section className='movieDetails'>
+          <div className="detailsPoster">
+            {
+              movie.poster_path !== null
               ? <img className="poster" src={baseImgUrl + movie.poster_path} alt="" />
               : <img className="poster" src={'/noPoster.png'} alt="no poster" />
-          }
-          <p>{movie.overview}</p>
-          {
-            movie.genres.map(genre => {
-              return (<p>{genre.name}</p>)
-            })
-          }
-          <p>Rating: {movie.vote_average}</p>
-          <p>Runtime: {movie.runtime}min</p>
+            }
+          </div>
+          <div className='movieBio'>
+            <h2>{movie.title}</h2>
+            <p>{movie.overview}</p>
+            
+            <p>Genres</p>
+            {
+              movie.genres.map(genre => {
+                return (<p>{genre.name}</p>)
+              })
+            }
+            <p>Rating: {movie.vote_average}</p>
+            <p>Runtime: {movie.runtime}min</p>
+          </div>
         </section>
       </>
     )
