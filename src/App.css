@@ -47,11 +47,6 @@ footer > nav > ul {
   padding-bottom: 5rem;
 }
 
-/* TODO: Remove this once images are all sorted */
-.movieCard {
-  border: solid black 2px;
-}
-
 .poster {
   width: 100%;
   height: 100%;
