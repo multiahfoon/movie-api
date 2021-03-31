@@ -37,22 +37,33 @@ const MovieDetails = (props) => {
           <div className="detailsPoster">
             {
               movie.poster_path !== null
-              ? <img className="poster" src={basePosterUrl + movie.poster_path} alt="" />
-              : <img className="poster" src={'/noPoster.png'} alt="no poster" />
+                ? <img className="poster" src={basePosterUrl + movie.poster_path} alt="" />
+                : <img className="poster" src={'/noPoster.png'} alt="no poster" />
             }
           </div>
           <div className='movieBio'>
-            <h2>{movie.title}</h2>
+            <h1>{movie.title}</h1>
+            <section>
+              <div>
+                <ul className='movieDetailGenres'>
+                  <li><p>{movie.release_date}</p></li>
+                  <li><p>Genres: </p></li>
+                  {
+                    movie.genres.map(genre => {
+                      return (<li key={genre.id}><p>{genre.name}</p></li>)
+                    })
+                  }
+                </ul>
+
+              </div>
+            </section>
+
+
             <p>{movie.overview}</p>
-            
-            <p>Genres</p>
-            {
-              movie.genres.map(genre => {
-                return (<p key={genre.id}>{genre.name}</p>)
-              })
-            }
-            <p>Rating: {movie.vote_average}</p>
+            <p>{movie.tagline}</p>
+
             <p>Runtime: {movie.runtime}min</p>
+            <p>Rating: {movie.vote_average}</p>
           </div>
         </section>
       </>
