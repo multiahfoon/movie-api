@@ -14,7 +14,7 @@ import { getMovieDetails } from '../../api/theMovieDb'
 
 // this is different to landing page poster
 // a larger image is needed for this page
-const basePosterUrl = 'https://image.tmdb.org/t/p/w500/'
+const basePosterUrl = 'https://image.tmdb.org/t/p/w500'
 
 const MovieDetails = (props) => {
   // const Id = '399566'
@@ -35,13 +35,18 @@ const MovieDetails = (props) => {
     history.push('/')
   }
 
+  const backgroundStyle = {
+    backgroundImage: `url(${basePosterUrl, movie.backdrop_path})` 
+    // background-size: cover
+  }
+
   // TODO: this works for now but needs refactoring
   // stops markup from rendering until movies has completely loaded 
   return movie.length < 1 ?
     null
     : (
       <>
-        <section className='movieDetails'>
+        <section className='movieDetails' style={{backgroundStyle}} >
           
           <div className="detailsPoster">
             {

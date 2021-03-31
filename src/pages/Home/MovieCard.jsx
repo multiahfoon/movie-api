@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const baseImgUrl = 'https://image.tmdb.org/t/p/w300/'
+export const baseImgUrl = 'https://image.tmdb.org/t/p/w300'
 
 const MovieCard = ({ data }) => {
   return (
