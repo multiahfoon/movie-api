@@ -68,3 +68,16 @@ footer > nav > ul {
 .movieBio {
   grid-column: 2 / 4;
 }
+
+.movieBio > h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.movieDetailGenres {
+  display: flex;
+}
+
+.movieDetailGenres > li{
+  padding-right: 0.7%;
+}
