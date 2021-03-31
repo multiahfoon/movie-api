@@ -34,6 +34,7 @@ const MovieDetails = (props) => {
     : (
       <>
         <section className='movieDetails'>
+          
           <div className="detailsPoster">
             {
               movie.poster_path !== null
@@ -41,30 +42,30 @@ const MovieDetails = (props) => {
                 : <img className="poster" src={'/noPoster.png'} alt="no poster" />
             }
           </div>
-          <div className='movieBio'>
-            <h1>{movie.title}</h1>
-            <section>
-              <div>
-                <ul className='movieDetailGenres'>
-                  <li><p>{movie.release_date}</p></li>
-                  <li><p>Genres: </p></li>
-                  {
-                    movie.genres.map(genre => {
-                      return (<li key={genre.id}><p>{genre.name}</p></li>)
-                    })
-                  }
-                </ul>
 
-              </div>
-            </section>
-
-
-            <p>{movie.overview}</p>
-            <p>{movie.tagline}</p>
-
-            <p>Runtime: {movie.runtime}min</p>
-            <p>Rating: {movie.vote_average}</p>
-          </div>
+          <article className='movieBio'>
+            <div>
+              <h1>{movie.title}</h1>
+              <section>
+                <div>
+                  <ul className='movieDetailGenres'>
+                    <li><p>{movie.release_date}</p></li>
+                    <li><p>Genres: </p></li>
+                    {
+                      movie.genres.map(genre => {
+                        return (<li key={genre.id}><p>{genre.name}</p></li>)
+                      })
+                    }
+                  </ul>
+                </div>
+              </section>
+              <p>{movie.overview}</p>
+              <p>{movie.tagline}</p>
+              <p>Runtime: {movie.runtime}min</p>
+              <p>Rating: {movie.vote_average}</p>
+            </div>
+          </article>
+        
         </section>
       </>
     )
