@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 ul, li {
@@ -51,6 +52,18 @@ footer > nav > ul {
   height: 100%;
 }
 
-.movieDetails > img {
-  width: 400px;
+.movieDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2%;
+  
+}
+
+.movieDetails > .detailsPoster {
+  grid-column: 1 / 2;  
+  width: 80%;
+}
+
+.movieBio {
+  grid-column: 2 / 4;
 }
