@@ -39,8 +39,7 @@ footer > nav > ul {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1%;
-  /* TODO: Need proper fix for card overflowing onto other elements */
-  overflow: hidden;
+  padding-bottom: 5rem;
 }
 
 /* TODO: Remove this once images are all sorted */
