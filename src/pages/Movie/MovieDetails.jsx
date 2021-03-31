@@ -7,10 +7,13 @@ import { useParams } from 'react-router'
 import { dispatch } from '../../store'
 import { searchMovie, popularMovies } from '../../actions'
 
-import { baseImgUrl } from '../Home/MovieCard'
 
 // fires request to api to get movie and dispatches action
 import { getMovieDetails } from '../../api/theMovieDb'
+
+// this is different to landing page poster
+// a larger image is needed for this page
+const basePosterUrl = 'https://image.tmdb.org/t/p/w500/'
 
 const MovieDetails = (props) => {
   // const Id = '399566'
@@ -34,7 +37,7 @@ const MovieDetails = (props) => {
           <div className="detailsPoster">
             {
               movie.poster_path !== null
-              ? <img className="poster" src={baseImgUrl + movie.poster_path} alt="" />
+              ? <img className="poster" src={basePosterUrl + movie.poster_path} alt="" />
               : <img className="poster" src={'/noPoster.png'} alt="no poster" />
             }
           </div>
