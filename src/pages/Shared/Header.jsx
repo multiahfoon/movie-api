@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 import { dispatch } from '../../store'
-import { searchMovie, movieDetails, popularMovies } from '../../actions' 
+import { searchMovie, movieDetails } from '../../actions' 
 
 // function makes get request to api with search
 import { getSearchMovie, getPopularMovies } from '../../api/theMovieDb'
