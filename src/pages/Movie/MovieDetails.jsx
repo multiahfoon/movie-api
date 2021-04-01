@@ -35,18 +35,13 @@ const MovieDetails = (props) => {
     history.push('/')
   }
 
-  const backgroundStyle = {
-    backgroundImage: `url(${basePosterUrl, movie.backdrop_path})` 
-    // background-size: cover
-  }
-
   // TODO: this works for now but needs refactoring
   // stops markup from rendering until movies has completely loaded 
   return movie.length < 1 ?
     null
     : (
       <>
-        <section className='movieDetails' style={{backgroundStyle}} >
+        <section className='movieDetails' >
           
           <div className="detailsPoster">
             {
