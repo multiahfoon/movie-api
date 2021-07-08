@@ -5,16 +5,14 @@ import {useHistory} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
 import { dispatch } from '../../store'
-import { searchMovie, popularMovies, movieDetails } from '../../actions'
+import './MovieDetails.styles.css'
+// import { searchMovie, popularMovies, movieDetails } from '../../actions'
 
 
 // fires request to api to get movie and dispatches action
-import { getMovieDetails } from '../../api/theMovieDb'
+import { getMovieDetails, getPopularMovies } from '../../api/theMovieDb'
 
-import './MovieDetails.styles.css'
 
-// this is different to landing page poster
-// a larger image is needed for this page
 const basePosterUrl = 'https://image.tmdb.org/t/p/w500'
 
 const MovieDetails = (props) => {
@@ -24,19 +22,15 @@ const MovieDetails = (props) => {
 
   useEffect(() => {
     getMovieDetails(id)
-    dispatch(searchMovie([]))
-    dispatch(popularMovies([]))
   }, [id])
 
   const history = useHistory()
   const clear = []
   const handleClick = () => {
-    dispatch(searchMovie(clear))
-    dispatch(movieDetails(clear))
+    getPopularMovies()
     history.push('/')
   }
 
-  // TODO: this works for now but needs refactoring
   // stops markup from rendering until movies has completely loaded 
   return movie.length < 1 ?
     null
@@ -47,7 +41,7 @@ const MovieDetails = (props) => {
           <div className="detailsPoster">
             {
               movie.poster_path !== null
-                ? <img src={basePosterUrl + movie.poster_path} alt="" />
+                ? <img src={basePosterUrl + movie.poster_path} />
                 : <img src={'/noPoster.png'} alt="no poster" />
             }
           </div>
