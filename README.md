@@ -1,8 +1,5 @@
 # MOVIE API
-A simple web application that allows users to search up information about movies.
-
-Note: this project has only just met mvp requirements and has yet to be made responsive.    
-
+A simple web application that allows users to search for information on movies.
 Demo: https://multiahfoon-movie-api.herokuapp.com/#/
 
 
