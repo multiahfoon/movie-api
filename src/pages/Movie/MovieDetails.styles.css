@@ -1,0 +1,49 @@
+
+.movieDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2%;
+  height: 80vh;
+  padding-bottom: 1rem;
+}
+
+.movieDetails > .detailsPoster {
+  grid-column: 1 / 2;  
+  width: 80%;
+  display: grid;
+  align-content: center;
+}
+
+.movieDetails > .detailsPoster > img {
+  width: 100%;
+}
+
+.movieBio {
+  grid-column: 2 / 4;
+  display: grid;
+  align-content: center;
+}
+
+.movieBio > div {
+  width: 80%;
+  padding-bottom: 3rem;
+}
+
+.movieBio > div > h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.movieDetailGenres {
+  display: flex;
+}
+
+.movieDetailGenres > li > p{
+  margin: 0.2rem 0 1rem;
+  padding-right: 10px;
+}
+
+.movieBio > div > p {
+  margin: 0.5rem 0 0.7rem;
+}
+

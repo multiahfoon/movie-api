@@ -9,6 +9,8 @@ import { getPopularMovies } from '../../api/theMovieDb'
 // child component
 import MovieCard from './MovieCard'
 
+import './MovieGrid.styles.css'
+
 const MovieGrid = (props) => {
   const {
     popularMovies,

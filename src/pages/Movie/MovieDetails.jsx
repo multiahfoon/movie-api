@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import {useHistory} from 'react-router-dom'
 
-
 // used to connect to redux store
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
@@ -11,6 +10,8 @@ import { searchMovie, popularMovies, movieDetails } from '../../actions'
 
 // fires request to api to get movie and dispatches action
 import { getMovieDetails } from '../../api/theMovieDb'
+
+import './MovieDetails.styles.css'
 
 // this is different to landing page poster
 // a larger image is needed for this page

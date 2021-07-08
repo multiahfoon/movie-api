@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import './MovieCard.styles.css'
+
 export const baseImgUrl = 'https://image.tmdb.org/t/p/w300'
 
 const MovieCard = ({ data }) => {
   return (
     <>
-      <div className="movieCard">
+      <div>
         <Link to={`/movie/${data.id}`}>
           {
             data.poster_path !== null 
