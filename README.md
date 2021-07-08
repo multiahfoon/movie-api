@@ -1,4 +1,4 @@
-# MOVIE API
+# SEARCH FOR MOVIE INFO
 A simple web application that allows users to search for information on movies.
 
 
