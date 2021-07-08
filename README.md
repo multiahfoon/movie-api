@@ -1,6 +1,5 @@
 # MOVIE API
 A simple web application that allows users to search for information on movies.
-Demo: https://multiahfoon-movie-api.herokuapp.com/#/
 
 
 ## Tech Stack
