@@ -1,13 +1,11 @@
-// react setup
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-// components
-import './App.css'
 import Header from './pages/Shared/Header'
 import MovieGrid from './pages/Home/MovieGrid'
 import MovieDetails from './pages/Movie/MovieDetails'
 
+import './App.css'
 
 function App() {
   return (
@@ -18,6 +16,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App
