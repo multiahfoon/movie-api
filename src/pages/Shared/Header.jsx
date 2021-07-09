@@ -21,8 +21,9 @@ const Header = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     return search !== "" ? (
+      getSearchMovie(search),
       history.push('/'),
-      getSearchMovie(search)
+      e.target[0].value = ''
     ) : null
   }
 
@@ -31,6 +32,7 @@ const resetMovies = () => {
   dispatch(movieDetails(clear))
   getPopularMovies()
 }
+
 
 return (
   <>
