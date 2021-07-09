@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 // used to connect to redux store
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
 import { dispatch } from '../../store'
 import './MovieDetails.styles.css'
-// import { searchMovie, popularMovies, movieDetails } from '../../actions'
+import { searchMovie, movieDetails } from '../../actions'
 
 
 // fires request to api to get movie and dispatches action
@@ -16,7 +16,6 @@ import { getMovieDetails, getPopularMovies } from '../../api/theMovieDb'
 const basePosterUrl = 'https://image.tmdb.org/t/p/w500'
 
 const MovieDetails = (props) => {
-  // const Id = '399566'
   const { id } = useParams()
   const { movie } = props
 
@@ -25,8 +24,9 @@ const MovieDetails = (props) => {
   }, [id])
 
   const history = useHistory()
-  const clear = []
   const handleClick = () => {
+    dispatch(searchMovie([]))
+    dispatch(movieDetails([]))
     getPopularMovies()
     history.push('/')
   }
@@ -37,7 +37,7 @@ const MovieDetails = (props) => {
     : (
       <>
         <section className='movieDetails' >
-          
+
           <div className="detailsPoster">
             {
               movie.poster_path !== null
@@ -69,7 +69,7 @@ const MovieDetails = (props) => {
               <button onClick={handleClick}>Back</button>
             </div>
           </article>
-        
+
         </section>
       </>
     )
