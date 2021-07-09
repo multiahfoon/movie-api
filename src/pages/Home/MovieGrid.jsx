@@ -1,28 +1,20 @@
 import React, { useEffect } from 'react'
-
-// used to connect to redux store
 import { connect } from 'react-redux'
 
-// fires request to api to get movie and dispatches action
 import { getPopularMovies } from '../../api/theMovieDb'
 
-// child component
 import MovieCard from './MovieCard'
 
 import './MovieGrid.styles.css'
 
 const MovieGrid = (props) => {
-  const {
-    popularMovies,
-    searchMovie
-  } = props
+  const { popularMovies, searchMovie } = props
 
   useEffect(() => {
     getPopularMovies()
   }, [])
 
-  // TODO: needs refactoring
-  // if theres nothing in search movie show popular movies else show searched movie results
+  // checks if a movie search has been done. If not, set movies to popularMovies
   let movies = []
   searchMovie.length < 1
     ? movies = [...movies, ...popularMovies]
@@ -32,16 +24,13 @@ const MovieGrid = (props) => {
     <>
       <main className="movieGrid">
         {
-          movies.map(movie => {
-            return <MovieCard key={movie.id} data={movie} />
-          })
+          movies.map(movie => <MovieCard key={movie.id} data={movie} />)
         }
       </main>
     </>
   )
 }
 
-// add store to components props
 function mapStateToProp(state) {
   return {
     popularMovies: state.popularMovies,
