@@ -21,13 +21,15 @@ const MovieGrid = (props) => {
     : movies = [...movies, ...searchMovie]
 
   return (
-    <>
-      <main className="movieGrid">
-        {
-          movies.map(movie => <MovieCard key={movie.id} data={movie} />)
-        }
-      </main>
-    </>
+    movies.length <= 1 ?
+      null
+      : <>
+        <main className="movieGrid">
+          {
+            movies.map(movie => <MovieCard key={movie.id} data={movie} />)
+          }
+        </main>
+      </>
   )
 }
 
