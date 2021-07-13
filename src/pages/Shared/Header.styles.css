@@ -3,6 +3,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
   padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .brandName {
