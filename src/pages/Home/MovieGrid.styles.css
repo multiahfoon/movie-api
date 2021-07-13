@@ -1,7 +1,42 @@
 .movieGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1%;
   padding-bottom: 5rem;
 }
 
+@media screen and (max-width: 1490px) {
+  .movieGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1%;
+    padding-bottom: 5rem;
+  }
+}   
+
+@media screen and (max-width: 1044px) {
+  .movieGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movieGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1%;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movieGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1%;
+    padding-bottom: 5rem;
+  }
+}
