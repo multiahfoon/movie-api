@@ -1,4 +1,3 @@
-
 .movieDetails {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,3 +46,93 @@
   margin: 0.5rem 0 0.7rem;
 }
 
+@media screen and (max-width: 1615px) {
+  .movieDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2%;
+    height: 80vh;
+    padding-bottom: 1rem;
+  }
+
+  .movieDetails > .detailsPoster {
+    grid-column: 1 / 2;  
+    width: 80%;
+    display: grid;
+    align-content: center;
+  }
+  
+  .movieBio {
+    grid-column: 2 / 3;
+    display: grid;
+    align-content: center;
+  }
+
+  .movieDetails > .detailsPoster > img {
+    width: 100%;
+  }
+  
+  .movieBio > div {
+    width: 80%;
+    padding-bottom: 3rem;
+  }
+  
+  .movieBio > div > h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  
+  .movieDetailGenres {
+    display: flex;
+  }
+  
+  .movieDetailGenres > li > p{
+    margin: 0.2rem 0 1rem;
+    padding-right: 10px;
+  }
+  
+  .movieBio > div > p {
+    margin: 0.5rem 0 0.7rem;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .movieDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  .movieDetails > .detailsPoster > img {
+    width: 100%;
+  }
+
+  .movieDetails > .detailsPoster {
+    width: 100%;
+  }
+  
+  .movieBio > div {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+  
+  .movieBio > div > h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  
+  .movieDetailGenres {
+    display: flex;
+  }
+  
+  .movieDetailGenres > li > p{
+    margin: 0.2rem 0 1rem;
+    padding-right: 10px;
+  }
+  
+  .movieBio > div > p {
+    margin: 0.5rem 0 0.7rem;
+  }
+}
